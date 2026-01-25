@@ -24,3 +24,6 @@ Recently served as a **MERN Teaching Assistant**, guiding **200+ learners** in d
 
  Ask me about **Node.js, MERN, backend architecture, or cloud deployments**  
  Open for collaborations and remote internship opportunities
+
+
+![Profile Views](https://img.shields.io)
