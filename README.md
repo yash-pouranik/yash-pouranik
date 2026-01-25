@@ -23,7 +23,7 @@ Recently served as a **MERN Teaching Assistant**, guiding **200+ learners** in d
 - Experience with scaling, hosting, and cloud optimizations  
 
  Ask me about **Node.js, MERN, backend architecture, or cloud deployments**  
- Open for collaborations and remote internship opportunities
+ Open for collaborations and remote internship opportunities.
 
-
-![Profile Views](https://img.shields.io)
+ 
+![Profile Views](https://komarev.com/ghpvc/?username=yash-pouranjk&label=Profile%20Views&color=0e75b6&style=flat)
