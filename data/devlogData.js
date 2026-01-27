@@ -12,7 +12,7 @@ const projects = await Project.find({ owner: req.user._id })
 
 // Database Index
 projectSchema.index({ owner: 1 });`,
-        whyWorks: "1. **.select()**: Reduces network payload and deserialization limits.\n2. **.lean()**: Returns plain JavaScript objects instead of Mongoose Documents, skipping the expensive hydration logic entirely.\n3. **Indexing**: Changes the lookup time complexity from O(N) to O(log N).",
+        whyWorks: "1. .select(): Reduces network payload and deserialization limits.\n2. .lean(): Returns plain JavaScript objects instead of Mongoose Documents, skipping the expensive hydration logic entirely.\n3. Indexing: Changes the lookup time complexity from O(N) to O(log N).",
         result: "Significantly faster dashboard load times. Reduced memory pressure on the backend Node.js process. Cleaner API response payload.",
         keyLearning: "For read-heavy, display-only endpoints, always use `.lean()`. The overhead of an Active Record pattern (Mongoose Documents) is unnecessary when no mutation is performed."
     },
@@ -27,7 +27,7 @@ projectSchema.index({ owner: 1 });`,
 // TTL: 2 hours`,
         whyWorks: "Reduces the authentication step from a disk-based database operation (potentially slow) to an in-memory key-value lookup (sub-millisecond).",
         result: "Authentication latency dropped to near-zero (Redis response). Drastic reduction in MongoDB query volume. Decoupled API throughput from database read capacity.",
-        keyLearning: "Middleware is the highest-leverage place for caching. Optimizing code that runs *once per request* pays significantly higher dividends than optimizing specific endpoints."
+        keyLearning: "Middleware is the highest-leverage place for caching. Optimizing code that runs once per request pays significantly higher dividends than optimizing specific endpoints."
     },
     {
         date: "2026-01-17",
@@ -40,7 +40,7 @@ await Project.updateOne(
     { _id: project._id },
     { $inc: { databaseUsed: docSize } }
 );`,
-        whyWorks: "**Type Agnostic**: Works whether `project` is a Mongoose Document or a plain object.\n**Concurrency**: `$inc` is atomic within MongoDB, preventing race conditions.\n**Performance**: Executes a single write command without requiring a preceding read.",
+        whyWorks: "Type Agnostic: Works whether `project` is a Mongoose Document or a plain object.\nConcurrency: `$inc` is atomic within MongoDB, preventing race conditions.\nPerformance: Executes a single write command without requiring a preceding read.",
         result: "Resolved runtime errors. Improved data integrity via atomic increments. Maintained the performance benefits of the Redis cache.",
         keyLearning: "Treat cached data as strictly read-only. Mutating state should always be done via explicit, atomic database commands rather than relying on object-level methods."
     },
@@ -50,7 +50,7 @@ await Project.updateOne(
         context: "Despite code and query optimizations, the system exhibited inconsistent and high baseline latency (approx. 100ms floor).",
         problem: "Profiling isolated the latency to network transit time. Backend was in Singapore, Database (Atlas) in Frankfurt. Every single database query incurred an intercontinental round-trip penalty.",
         analysis: "Moving the database is operationally expensive (data migration). Moving the stateless backend service is cheap. The goal was to minimize the physical distance between compute and storage.",
-        solution: "Redeployed the Backend Server to the **Frankfurt** region to coexist with the MongoDB Atlas cluster and the Redis instance.",
+        solution: "Redeployed the Backend Server to the Frankfurt region to coexist with the MongoDB Atlas cluster and the Redis instance.",
         whyWorks: "Drastically shortens the network path for database connection pooling and query execution. Application-to-Data latency is the dominant factor in backend performance for data-intensive apps.",
         result: "MongoDB query latency reduced by ~100ms. Redis response times improved to 1-2ms. Immediate, system-wide performance improvement without a code change.",
         keyLearning: "Geography is a primitive of system design. Before optimizing O(N) algorithms, ensure your compute is physically adjacent to your data."
