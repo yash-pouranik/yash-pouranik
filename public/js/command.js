@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Home", hotkey: "G H", action: () => window.location.href = "/" },
         { name: "About", hotkey: "G A", action: () => window.location.href = "/about" },
         { name: "Projects", hotkey: "G P", action: () => window.location.href = "/projects" },
+        { name: "Devlog", hotkey: "G D", action: () => window.location.href = "/urbackend/devlog" },
         { name: "Send Email", hotkey: "E", action: () => window.location.href = "mailto:yashpouranik124@gmail.com" },
         { name: "View Source", hotkey: "S", action: () => window.location.href = "https://github.com/yash-pouranik/portfolio" },
         { name: "Copy Link", hotkey: "L", action: () => navigator.clipboard.writeText(window.location.href) },
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const filtered = commands.filter(cmd => cmd.name.toLowerCase().includes(query));
         renderCommands(filtered);
     }
-    
+
     function getSelected() {
         return list.querySelector("li.selected");
     }
@@ -58,36 +59,36 @@ document.addEventListener("DOMContentLoaded", () => {
         if (selected && selected.nextElementSibling) {
             selected.classList.remove("selected");
             selected.nextElementSibling.classList.add("selected");
-            selected.nextElementSibling.focus();
+            selected.nextElementSibling.scrollIntoView({ block: "nearest" });
         }
     }
-    
+
     function selectPrev() {
         const selected = getSelected();
         if (selected && selected.previousElementSibling) {
             selected.classList.remove("selected");
             selected.previousElementSibling.classList.add("selected");
-            selected.previousElementSibling.focus();
+            selected.previousElementSibling.scrollIntoView({ block: "nearest" });
         }
     }
-    
+
     function runSelected() {
-         const selected = getSelected();
-         if (selected) {
-             const index = selected.dataset.index;
-             const query = input.value.toLowerCase();
-             // Find the original command from the filtered list
-             const filtered = commands.filter(cmd => cmd.name.toLowerCase().includes(query));
-             const commandToRun = filtered[index];
-             if(commandToRun) {
+        const selected = getSelected();
+        if (selected) {
+            const index = selected.dataset.index;
+            const query = input.value.toLowerCase();
+            // Find the original command from the filtered list
+            const filtered = commands.filter(cmd => cmd.name.toLowerCase().includes(query));
+            const commandToRun = filtered[index];
+            if (commandToRun) {
                 commandToRun.action();
                 closePalette();
-             }
-         }
+            }
+        }
     }
 
     // --- Event Listeners ---
-    
+
     // 1. Global keydown (Ctrl+K)
     window.addEventListener("keydown", (e) => {
         if ((e.ctrlKey || e.metaKey) && e.key === "k") {
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 openPalette();
             }
         }
-        
+
         // Close on Escape
         if (e.key === "Escape" && overlay.style.display === "flex") {
             closePalette();
@@ -107,29 +108,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Open button click
     openBtn.addEventListener("click", openPalette);
-    
+
     // 3. Close on overlay click
     overlay.addEventListener("click", (e) => {
         if (e.target === overlay) { // Only if clicking the background
             closePalette();
         }
     });
-    
+
     // 4. Input field filtering
     input.addEventListener("input", filterCommands);
-    
+
     // 5. Input keydown (Enter, Up, Down)
     input.addEventListener("keydown", (e) => {
-         if (e.key === "ArrowDown") {
-             e.preventDefault();
-             selectNext();
-         } else if (e.key === "ArrowUp") {
-             e.preventDefault();
-             selectPrev();
-         } else if (e.key === "Enter") {
-             e.preventDefault();
-             runSelected();
-         }
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            selectNext();
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            selectPrev();
+        } else if (e.key === "Enter") {
+            e.preventDefault();
+            runSelected();
+        }
     });
 
 });

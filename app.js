@@ -7,6 +7,8 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 
+const devlogData = require("./data/devlogData");
+
 const projects = [
     {
         slug: "urbackend",
@@ -21,7 +23,7 @@ const projects = [
     {
         slug: "campusnotes",
         title: "CampusNotes",
-        year: "2025 - SEPT",  
+        year: "2025 - SEPT",
         tagline: "notes sharing platform - 42GB+ pdfs Delivered",
         stats: "750+ Active Users | Node.js, EJS, MongoDB",
         desc: "CampusNotes is a production-deployed academic notes sharing platform that allows students to upload, verify, and download study materials. It features secure session-based authentication, role-based access control, and an AI assistant for note summarization and contextual chat, while handling real-world traffic and file delivery at scale.",
@@ -41,7 +43,7 @@ const projects = [
     {
         slug: "edubridge",
         title: "EduBridge Kids",
-        year: "2025 - NOV",  
+        year: "2025 - NOV",
         tagline: "Offline-first LMS with AI & Live Classes",
         stats: "Void Hack 7.0 | MERN, PWA, Gemini AI",
         desc: "Built for Void Hack 7.0, EduBridge Kids is an offline-first learning management system designed for students in low-connectivity regions. It supports role-based access for students and teachers, progressive web app (PWA) capabilities for offline usage, and a Gemini-powered AI study assistant to help with learning and doubt resolution.",
@@ -84,8 +86,8 @@ const projects = [
 
 // Root route
 app.get("/", (req, res) => {
-    res.render("index", { 
-        featuredProjects: projects.slice(0, 2) 
+    res.render("index", {
+        featuredProjects: projects.slice(0, 2)
     });
 });
 
@@ -97,6 +99,12 @@ app.get("/about", (req, res) => {
 // Projects route (now renders the grid)
 app.get("/projects", (req, res) => {
     res.render("projects", { projects: projects });
+});
+
+// Devlog route
+// Devlog route
+app.get("/urbackend/devlog", (req, res) => {
+    res.render("devlog", { entries: devlogData });
 });
 
 // --- NEW PROJECT DETAIL ROUTE ---

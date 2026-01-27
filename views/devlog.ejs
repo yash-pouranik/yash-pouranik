@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Devlog | urBackend</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- SEO & Open Graph -->
+    <meta name="description" content="Engineering Devlog for urBackend - A technical dive into system architecture, performance optimization, and backend engineering challenges.">
+    <link rel="canonical" href="https://yashpouranik.bitbros.in/urbackend/devlog" />
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yashpouranik.bitbros.in/urbackend/devlog">
+    <meta property="og:title" content="Engineering Devlog | urBackend">
+    <meta property="og:description" content="Technical deep dives into backend architecture, Redis caching, and MongoDB optimization.">
+</head>
+<body class="devlog-body">
+    <nav class="navbar">
+        <a href="/" class="nav-logo">Y</a>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/urbackend/devlog">Devlog</a>
+        </div>
+        <button class="nav-command-btn" id="command-btn">
+            ⌘
+        </button>
+    </nav>
+
+    <div class="devlog-container">
+        <header class="devlog-header">
+            <h1>System Engineering Log</h1>
+            <p class="subtitle">Architecture decisions, performance optimizations, and incident reports.</p>
+        </header>
+
+        <div class="timeline">
+            <% entries.forEach(entry => { %>
+                <article class="log-entry">
+                    <div class="entry-meta">
+                        <span class="entry-date"><%= entry.date %></span>
+                        <div class="entry-divider"></div>
+                    </div>
+                    
+                    <div class="entry-content">
+                        <h2 class="entry-title"><%= entry.title %></h2>
+                        
+                        <div class="section context">
+                            <h3>CONTEXT</h3>
+                            <p><%= entry.context %></p>
+                        </div>
+
+                        <div class="section problem">
+                            <h3>PROBLEM</h3>
+                            <p><%= entry.problem %></p>
+                        </div>
+
+                        <div class="section analysis">
+                            <h3>ANALYSIS</h3>
+                            <p><%= entry.analysis %></p>
+                        </div>
+
+                        <div class="section solution">
+                            <h3>SOLUTION</h3>
+                            <div class="code-block">
+                                <pre><code><%= entry.solution %></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="section why-works">
+                            <h3>WHY THIS WORKS</h3>
+                            <div class="markdown-content">
+                                <%- entry.whyWorks.replace(/\n/g, '<br>') %>
+                            </div>
+                        </div>
+
+                        <div class="section result">
+                            <h3>RESULT</h3>
+                            <p><%= entry.result %></p>
+                        </div>
+
+                        <div class="section learning">
+                            <h3>KEY LEARNING</h3>
+                            <p class="highlight"><%= entry.keyLearning %></p>
+                        </div>
+                    </div>
+                </article>
+            <% }); %>
+        </div>
+    </div>
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette" id="command-palette">
+            <input type="text" placeholder="Type a command or search..." class="command-input" id="command-input">
+            <ul class="command-list" id="command-list"></ul>
+        </div>
+    </div>
+    <script src="/js/command.js"></script>
+</body>
+</html>
