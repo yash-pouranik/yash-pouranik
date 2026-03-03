@@ -122,6 +122,37 @@ h1 {
     color: #888;
 }
 
+.visitor-badge {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #555;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.3px;
+}
+
+.visitor-badge strong {
+    color: #00ff88;
+    font-weight: 600;
+}
+
+.visitor-dot {
+    width: 7px;
+    height: 7px;
+    background: #00ff88;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+
 /* 4. Main Content (About & Projects Pages) */
 .main-content {
     max-width: 1024px;

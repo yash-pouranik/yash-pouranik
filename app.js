@@ -1,6 +1,36 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const path = require('path');
+
+// --- urBackend Visit Counter ---
+const URBACKEND_BASE = 'https://api.urbackend.bitbros.in';
+const URBACKEND_API_KEY = process.env.URBACKEND_API_KEY;
+const COLLECTION = 'visits';
+
+async function trackVisit() {
+    const headers = { 'x-api-key': URBACKEND_API_KEY, 'Content-Type': 'application/json' };
+
+    const getRes = await fetch(`${URBACKEND_BASE}/api/data/${COLLECTION}`, { headers });
+    const all = await getRes.json();
+    const doc = Array.isArray(all) ? all[0] : null;
+    if (!doc) return 1;
+
+    const newCount = (doc.count || 0) + 1;
+
+    await fetch(`${URBACKEND_BASE}/api/data/${COLLECTION}/${doc._id}`, {
+        method: 'PUT', headers,
+        body: JSON.stringify({ count: newCount })
+    });
+
+    return newCount;
+}
+
+function ordinalSuffix(n) {
+    const s = ['th', 'st', 'nd', 'rd'];
+    const v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -85,11 +115,14 @@ const projects = [
 
 
 // Root route
-app.get('/', (req, res) => {
-    res.render(
-        "index",
-        { featuredProjects: projects.slice(0, 2) }
-    );
+app.get('/', async (req, res) => {
+    try {
+        const count = await trackVisit();
+        res.render("index", { featuredProjects: projects.slice(0, 2), visitNumber: ordinalSuffix(count) });
+    } catch (err) {
+        console.error('Visit counter error:', err.message);
+        res.render("index", { featuredProjects: projects.slice(0, 2), visitNumber: '...' });
+    }
 });
 
 // About route
