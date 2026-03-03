@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const path = require("path");
+const path = require('path');
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -85,10 +85,11 @@ const projects = [
 
 
 // Root route
-app.get("/", (req, res) => {
-    res.render("index", {
-        featuredProjects: projects.slice(0, 2)
-    });
+app.get('/', (req, res) => {
+    res.render(
+        "index",
+        { featuredProjects: projects.slice(0, 2) }
+    );
 });
 
 // About route
@@ -96,26 +97,23 @@ app.get("/about", (req, res) => {
     res.render("about");
 });
 
-// Projects route (now renders the grid)
+// Projects route
 app.get("/projects", (req, res) => {
     res.render("projects", { projects: projects });
 });
 
 // Devlog route
-// Devlog route
 app.get("/urbackend/devlog", (req, res) => {
     res.render("devlog", { entries: devlogData });
 });
 
-// --- NEW PROJECT DETAIL ROUTE ---
-// This handles URLs like /projects/campusnotes
+// Project detail route
 app.get("/projects/:slug", (req, res) => {
     const project = projects.find(p => p.slug === req.params.slug);
     if (project) {
-        // Render the new 'project-detail.ejs' file
         res.render("project-detail", { project: project });
     } else {
-        res.redirect("/projects"); // If not found, go back
+        res.redirect("/projects");
     }
 });
 
