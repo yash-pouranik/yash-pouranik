@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 
 // --- urBackend Visit Counter ---
-const URBACKEND_BASE = 'https://api.urbackend.bitbros.in';
+const URBACKEND_BASE = 'https://api.ub.bitbros.in';
 const URBACKEND_API_KEY = process.env.URBACKEND_API_KEY;
 const COLLECTION = 'visits';
 
