@@ -1,27 +1,32 @@
-require('dotenv').config();
-const express = require("express");
+import 'dotenv/config';
+import express from 'express';
 const app = express();
-const path = require('path');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import urBackend from '@urbackend/sdk';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 // --- urBackend Visit Counter ---
 const URBACKEND_BASE = 'https://api.ub.bitbros.in';
 const URBACKEND_API_KEY = process.env.URBACKEND_API_KEY;
 const COLLECTION = 'visits';
 
-async function trackVisit() {
-    const headers = { 'x-api-key': URBACKEND_API_KEY, 'Content-Type': 'application/json' };
+const client = urBackend({ apiKey: URBACKEND_API_KEY });
 
-    const getRes = await fetch(`${URBACKEND_BASE}/api/data/${COLLECTION}`, { headers });
-    const all = await getRes.json();
-    const doc = Array.isArray(all) ? all[0] : null;
+
+
+async function trackVisit() {
+    const data = await client.db.getAll(COLLECTION, { sort: 'createdAt:desc', limit: 10 });
+
+    const doc = data.items[0];
     if (!doc) return 1;
 
     const newCount = (doc.count || 0) + 1;
 
-    await fetch(`${URBACKEND_BASE}/api/data/${COLLECTION}/${doc._id}`, {
-        method: 'PUT', headers,
-        body: JSON.stringify({ count: newCount })
-    });
+    await client.db.update(COLLECTION, doc._id, { count: newCount });
 
     return newCount;
 }
@@ -37,7 +42,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 
-const devlogData = require("./data/devlogData");
+import devlogData from "./data/devlogData.js";
 
 const projects = [
     {

@@ -57,4 +57,4 @@ await Project.updateOne(
     }
 ];
 
-module.exports = devlogData;
+export default devlogData;
