@@ -48,7 +48,7 @@ const projects = [
     {
         slug: "urbackend",
         title: "urBackend",
-        year: "2025 - DEC",
+        year: "2025 — 2026",
         tagline: "Instant Backend-as-a-Service (BaaS) Platform",
         stats: "Node.js, Redis, MongoDB, JWT, REST APIs | GSSoC'2026 Open Source",
         desc: "urBackend is an Instant Backend-as-a-Service platform that lets developers spin up a full backend — databases, auth, storage, and mail — without writing any server code. It ships with a developer dashboard, API key management, schema validation, and a growing SDK ecosystem.",
@@ -66,7 +66,7 @@ const projects = [
     {
         slug: "campusnotes",
         title: "CampusNotes",
-        year: "2025 - SEPT",
+        year: "2025",
         tagline: "Academic Notes Sharing Platform — 5.7k+ downloads",
         stats: "800+ Users | 114 Verified Signups | Node.js, EJS, MongoDB",
         desc: "CampusNotes is a production-deployed notes-sharing platform where students upload, verify, and download study materials. It was built to solve a real problem — juniors couldn't find reliable notes, and existing tools had no quality control.",
@@ -83,7 +83,7 @@ const projects = [
     {
         slug: "errlocal",
         title: "Errlocal",
-        year: "2026 - FEB",
+        year: "2026",
         tagline: "AI-powered Node.js CLI Debugger",
         stats: "Node.js, Groq LLM, Lingo.dev | CLI Tool | npm",
         desc: "Errlocal is a CLI tool that plugs into your Node.js workflow and transforms raw stack traces into actionable, AI-generated fixes. Built for developers who are tired of copy-pasting errors into ChatGPT manually.",
@@ -100,7 +100,7 @@ const projects = [
     {
         slug: "kiroo",
         title: "Kiroo",
-        year: "2025 - DEC",
+        year: "2025 — 2026",
         tagline: "API Interaction Replay & Debugging SDK",
         stats: "Node.js, CLI + SDK | npm | Technical Writing 2nd Place",
         desc: "Kiroo is a developer tooling project built around the idea of API interaction replay — recording, replaying, and debugging API calls from the terminal or via SDK integration. The @kiroo/sdk powers urBackend's infrastructure, and @kiroo/cli brings replay to any terminal.",
@@ -120,7 +120,7 @@ const projects = [
     {
         slug: "nirvirodh",
         title: "Nirvirodh",
-        year: "2025 - AUG",
+        year: "2025",
         tagline: "Real-time conflict-free collaboration",
         stats: "Socket.IO, Node.js, MongoDB",
         desc: "Nirvirodh is a real-time collaboration platform that solves the classic problem of editing conflicts in team environments — two people editing the same file at the same time, overwriting each other's work.",
@@ -136,7 +136,7 @@ const projects = [
     {
         slug: "trekstay",
         title: "TrekStay",
-        year: "2025 - JUNE",
+        year: "2025",
         tagline: "Airbnb-inspired stay booking",
         stats: "Node.js, EJS, MongoDB, Mapbox",
         desc: "TrekStay is a full-stack stay booking platform inspired by Airbnb, built to learn and demonstrate end-to-end product development — from user auth and listing management to map integration and reviews.",
@@ -152,7 +152,7 @@ const projects = [
     {
         slug: "gullybazar",
         title: "GullyBazar",
-        year: "2024 - JULY",
+        year: "2024",
         tagline: "Hyperlocal marketplace for vendors",
         stats: "Top 25 / ~800 Teams — Solve for India | MERN Stack",
         desc: "GullyBazar was built in 48 hours at Tutedude's Solve for India national hackathon with a team of 3. It connects street food vendors with raw material suppliers in a hyperlocal marketplace, addressing a gap in the informal economy.",
@@ -168,7 +168,7 @@ const projects = [
     {
         slug: "pandey-dhudh-bhandar",
         title: "Pandey Ledger",
-        year: "2025 - SEPT",
+        year: "2025",
         tagline: "Digital credit manager for a local vendor",
         stats: "Practical Use Case | Node.js, MongoDB",
         desc: "Pandey Ledger is a real-world utility app built for a local milk vendor to replace his handwritten udhaar (credit) register with a digital system. A small project with a very real user.",
