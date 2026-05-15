@@ -1,13 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     // --- Define commands ---
     const commands = [
+        // Navigation
         { name: "Home", hotkey: "G H", action: () => window.location.href = "/" },
         { name: "About", hotkey: "G A", action: () => window.location.href = "/about" },
         { name: "Projects", hotkey: "G P", action: () => window.location.href = "/projects" },
         { name: "Devlog", hotkey: "G D", action: () => window.location.href = "/urbackend/devlog" },
+        
+        // Socials & Links
+        { name: "View Resume", hotkey: "V R", action: () => window.open("/YASH_RESUME_APRIL2026.pdf", "_blank") },
+        { name: "LinkedIn Profile", hotkey: "G L", action: () => window.open("https://linkedin.com/in/yash-pouranik30", "_blank") },
+        { name: "GitHub Profile", hotkey: "G G", action: () => window.open("https://github.com/yash-pouranik", "_blank") },
+        { name: "X (Twitter)", hotkey: "G X", action: () => window.open("http://x.com/yash_pouranik", "_blank") },
+        { name: "Medium Articles", hotkey: "G M", action: () => window.open("https://medium.com/@yashpouranik124", "_blank") },
         { name: "Send Email", hotkey: "E", action: () => window.location.href = "mailto:yashpouranik124@gmail.com" },
-        { name: "View Source", hotkey: "S", action: () => window.location.href = "https://github.com/yash-pouranik/portfolio" },
-        { name: "Copy Link", hotkey: "L", action: () => navigator.clipboard.writeText(window.location.href) },
+        
+        // Actions
+        { name: "View Portfolio Source", hotkey: "S", action: () => window.open("https://github.com/yash-pouranik/portfolio", "_blank") },
+        { name: "Copy Current URL", hotkey: "C", action: () => navigator.clipboard.writeText(window.location.href) },
     ];
 
     // --- Get Elements ---
@@ -33,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         list.innerHTML = ""; // Clear list
         commandsToRender.forEach((cmd, index) => {
             const li = document.createElement("li");
-            li.innerHTML = `${cmd.name} <kbd>${cmd.hotkey}</kbd>`;
+            li.innerHTML = `<span>${cmd.name}</span> <kbd>${cmd.hotkey}</kbd>`;
             li.tabIndex = 0; // Make it focusable
             li.dataset.index = index;
             if (index === 0) {

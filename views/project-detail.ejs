@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= project.title %> - Yash Pouranik</title>
+    <link rel="icon" href="/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="google-site-verification" content="o5KNQ9R-ummCVpBGTiPWtBLvDPdVm-uxMuIQXmj3mlU" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +58,36 @@
                         Visit Live Site ↗
                     </a>
                 <% } %>
+
+                <% if (project.docs) { %>
+                    <a href="<%= project.docs %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #00ff88; color: #00ff88;">
+                        Read Docs ↗
+                    </a>
+                <% } %>
+                
+                <% if (project.npm) { %>
+                    <a href="<%= project.npm %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #cb3837; color: #cb3837;">
+                        View on npm ↗
+                    </a>
+                <% } %>
+                
+                <% if (project.npm_cli) { %>
+                    <a href="<%= project.npm_cli %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #cb3837; color: #cb3837;">
+                        CLI on npm ↗
+                    </a>
+                <% } %>
+                
+                <% if (project.npm_sdk) { %>
+                    <a href="<%= project.npm_sdk %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #cb3837; color: #cb3837;">
+                        SDK on npm ↗
+                    </a>
+                <% } %>
+
+                <% if (project.article) { %>
+                    <a href="<%= project.article %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #fff; color: #fff;">
+                        Read Article ↗
+                    </a>
+                <% } %>
                 
                 <% if(project.slug !== "yash") {%>
                     <a href="<%= project.repo %>" target="_blank" class="view-all-link" style="font-size: 1rem;">
@@ -76,6 +107,14 @@
         <div class="project-detail-body" style="font-size: 1.1rem; color: #b3b3b3; line-height: 1.8;">
             <p><%= project.desc %></p>
             
+            <% if (project.highlights && project.highlights.length > 0) { %>
+                <ul style="margin-top: 20px; padding-left: 20px;">
+                    <% project.highlights.forEach(function(highlight) { %>
+                        <li style="margin-bottom: 10px;"><%= highlight %></li>
+                    <% }); %>
+                </ul>
+            <% } %>
+
             <div style="margin-top: 40px;">
                 <h4 style="color: #fff; margin-bottom: 15px;">Tech Stack & Stats</h4>
                 <p style="font-family: 'JetBrains Mono', monospace; color: #666;">
@@ -96,8 +135,10 @@
     <footer class="footer-content">
         <a href="https://linkedin.com/in/yash-pouranik30" target="_blank">LinkedIn</a>
         <a href="https://github.com/yash-pouranik" target="_blank">GitHub</a>
+        <a href="http://x.com/yash_pouranik" target="_blank">X (Twitter)</a>
+        <a href="https://medium.com/@yashpouranik124" target="_blank">Medium</a>
         <a href="mailto:yashpouranik124@gmail.com">Email</a>
-        <a href="/YASH_RESUME_MAR2026.pdf" target="_blank">Resume</a>
+        <a href="/YASH_RESUME_APRIL2026.pdf" target="_blank">Resume</a>
     </footer>
 
     <script src="/js/command.js"></script>

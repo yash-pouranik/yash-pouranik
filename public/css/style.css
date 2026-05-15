@@ -190,7 +190,7 @@ p {
 }
 
 .social-links-page a:hover {
-    color: #00ff88;
+    color: #00cc70;
 }
 
 .project {
@@ -486,8 +486,8 @@ p {
 }
 
 .tech-badge:hover {
-    border-color: #00ff88;
-    background: #0d2e1f;
+    border-color: #00cc70;
+    background: #0b261a;
     /* Dark Green tint on hover */
     transform: translateY(-2px);
 }
@@ -523,8 +523,8 @@ p {
 }
 
 .view-all-link:hover {
-    color: #00ff88;
-    border-color: #00ff88;
+    color: #00cc70;
+    border-color: #00cc70;
     text-decoration: none;
 }
 
@@ -562,7 +562,7 @@ p {
 }
 
 .email-btn:hover {
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(0, 204, 112, 0.1);
     text-decoration: none;
 }
 
@@ -598,7 +598,8 @@ p {
 }
 
 .achievement-item:hover::before {
-    background-color: #00ff88;
+    background-color: #00cc70;
+    border-color: #00cc70;
 }
 
 .achievement-year {
@@ -628,7 +629,7 @@ p {
 
 /* --- Projects Timeline Tweaks --- */
 .achievement-content h4 a:hover {
-    color: #00ff88 !important;
+    color: #00cc70 !important;
     /* Title turns Green on Hover */
     text-decoration: underline;
 }
