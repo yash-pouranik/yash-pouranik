@@ -736,165 +736,148 @@ p {
 
 /* 10. Devlog Styles (Sci-Fi / Engineering Log) */
 .devlog-body {
-    /* Inherit background-color: #000000; from body */
     font-family: 'Inter', sans-serif;
-    color: #c5c6c7;
+    color: #d7d7d7;
 }
 
 .devlog-header {
     text-align: left;
-    margin-bottom: 60px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #252525;
 }
 
 .devlog-header h1 {
-    font-family: "Neuzeit Grotesk Bold", 'JetBrains Mono', monospace;
-    font-size: 3rem;
-    color: #00ff88;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #f4f4f4;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
 }
 
 .devlog-header .subtitle {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1rem;
-    color: #888;
+    font-size: 1.02rem;
+    color: #8f8f8f;
+    max-width: 720px;
+    margin-bottom: 0;
 }
 
 .devlog-container {
-    max-width: 800px;
-    margin: 40px auto 100px auto;
+    max-width: 860px;
+    margin: 32px auto 100px auto;
     padding: 0 20px;
 }
 
-/* Badge in Navbar */
-.badge {
-    font-size: 0.7rem;
-    background: #111;
-    color: #00ff88;
-    padding: 3px 8px;
-    border-radius: 4px;
-    margin-left: 8px;
-    vertical-align: middle;
+.devlog-kicker {
+    font-size: 0.82rem;
+    color: #00d170;
     font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
 }
 
-/* Timeline Components */
-.timeline {
-    position: relative;
-    border-left: 2px solid #333;
-    padding-left: 40px;
+.devlog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .log-entry {
-    background: #050505;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 50px;
-    position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Timeline Dot */
-.log-entry::before {
-    content: '';
-    position: absolute;
-    left: -46px;
-    /* Adjust based on padding of timeline */
-    top: 30px;
-    width: 12px;
-    height: 12px;
-    background: #000;
-    border: 2px solid #00ff88;
-    border-radius: 50%;
-    z-index: 10;
+    background: #0d0d0d;
+    border: 1px solid #232323;
+    border-radius: 12px;
+    padding: 28px;
 }
 
 .entry-date {
     font-family: 'JetBrains Mono', monospace;
-    color: #888;
-    font-size: 0.9rem;
+    color: #7f7f7f;
+    font-size: 0.82rem;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .entry-title {
-    font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 1.6rem;
-    color: #fff;
-    margin-bottom: 25px;
-    border-left: 4px solid #00ff88;
-    padding-left: 15px;
+    font-size: 1.7rem;
+    color: #f7f7f7;
+    margin-bottom: 24px;
+    line-height: 1.25;
 }
 
 /* Content Sections */
 .section {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .section h3 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: #666;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    color: #f1f1f1;
     margin-bottom: 8px;
-    letter-spacing: 1px;
+    letter-spacing: 0;
+    text-transform: none;
 }
 
 .section p {
-    color: #c5c6c7;
+    color: #adadad;
     line-height: 1.6;
-    font-size: 1.05rem;
+    font-size: 0.98rem;
 }
 
 /* Code Snippets */
 .code-block {
-    background: #000;
-    border: 1px solid #333;
-    border-radius: 4px;
-    padding: 15px;
+    background: #090909;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    padding: 16px;
     margin-top: 10px;
     overflow-x: auto;
 }
 
 .code-block pre {
     margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .code-block code {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
-    color: #00ff88;
+    color: #d8d8d8;
 }
 
 /* Why This Works (Markdown style list) */
 .markdown-content {
-    color: #c5c6c7;
-    font-size: 1rem;
+    color: #adadad;
+    font-size: 0.98rem;
     line-height: 1.6;
 }
 
 /* Key Learning Highlight */
 .section.learning p.highlight {
-    color: #00ff88;
+    color: #e8e8e8;
     font-weight: 500;
-    border-left: 2px solid #00ff88;
+    border-left: 3px solid #00d170;
     padding-left: 12px;
+    margin-bottom: 0;
+    background: transparent;
 }
 
 @media (max-width: 600px) {
-    .timeline {
-        border-left: none;
-        padding-left: 0;
-    }
-
-    .log-entry::before {
-        display: none;
-    }
-
     .devlog-header h1 {
         font-size: 2.2rem;
+    }
+
+    .log-entry {
+        padding: 22px 18px;
+    }
+
+    .entry-title {
+        font-size: 1.4rem;
     }
 }

@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering Devlog | urBackend</title>
+    <title>Devlog | urBackend</title>
     <link rel="icon" href="/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- SEO & Open Graph -->
-    <meta name="description" content="Engineering Devlog for urBackend - A technical dive into system architecture, performance optimization, and backend engineering challenges.">
+    <meta name="description" content="Devlog for urBackend covering architecture decisions, backend improvements, and engineering notes.">
     <link rel="canonical" href="https://yashpouranik.bitbros.in/urbackend/devlog" />
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://yashpouranik.bitbros.in/urbackend/devlog">
-    <meta property="og:title" content="Engineering Devlog | urBackend">
-    <meta property="og:description" content="Technical deep dives into backend architecture, Redis caching, and MongoDB optimization.">
+    <meta property="og:title" content="Devlog | urBackend">
+    <meta property="og:description" content="Technical notes on backend architecture, optimizations, and implementation decisions.">
 </head>
 <body class="devlog-body">
     <nav class="navbar">
@@ -31,58 +33,55 @@
 
     <div class="devlog-container">
         <header class="devlog-header">
-            <span>just started..</span>
-            <h1>Optimization Logs</h1>
-            <p class="subtitle">Architecture decisions, performance optimizations, and incident reports.</p>
+            <p class="devlog-kicker">urBackend Devlog</p>
+            <h1>Build notes and engineering decisions.</h1>
+            <p class="subtitle">A simple record of backend changes, performance work, and lessons from shipping.</p>
         </header>
 
-        <div class="timeline">
+        <div class="devlog-list">
             <% entries.forEach(entry => { %>
                 <article class="log-entry">
-                    <div class="entry-meta">
-                        <span class="entry-date"><%= entry.date %></span>
-                        <div class="entry-divider"></div>
-                    </div>
+                    <span class="entry-date"><%= entry.date %></span>
                     
                     <div class="entry-content">
                         <h2 class="entry-title"><%= entry.title %></h2>
                         
                         <div class="section context">
-                            <h3>CONTEXT</h3>
+                            <h3>Context</h3>
                             <p><%= entry.context %></p>
                         </div>
 
                         <div class="section problem">
-                            <h3>PROBLEM</h3>
+                            <h3>Problem</h3>
                             <p><%= entry.problem %></p>
                         </div>
 
                         <div class="section analysis">
-                            <h3>ANALYSIS</h3>
+                            <h3>Analysis</h3>
                             <p><%= entry.analysis %></p>
                         </div>
 
                         <div class="section solution">
-                            <h3>SOLUTION</h3>
+                            <h3>Solution</h3>
                             <div class="code-block">
                                 <pre><code><%= entry.solution %></code></pre>
                             </div>
                         </div>
 
                         <div class="section why-works">
-                            <h3>WHY THIS WORKS</h3>
+                            <h3>Why this works</h3>
                             <div class="markdown-content">
                                 <%- entry.whyWorks.replace(/\n/g, '<br>') %>
                             </div>
                         </div>
 
                         <div class="section result">
-                            <h3>RESULT</h3>
+                            <h3>Result</h3>
                             <p><%= entry.result %></p>
                         </div>
 
                         <div class="section learning">
-                            <h3>KEY LEARNING</h3>
+                            <h3>Key learning</h3>
                             <p class="highlight"><%= entry.keyLearning %></p>
                         </div>
                     </div>
