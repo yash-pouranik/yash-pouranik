@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Yash Pouranik</title>
+    <link rel="icon" href="/logo.png" type="image/png">
+
+    <meta name="description" content="Technical articles by Yash Pouranik on backend engineering, debugging systems, auth, MongoDB, and developer tooling.">
+    <link rel="canonical" href="https://yashpouranik.bitbros.in/articles" />
+
+    <meta name="google-site-verification" content="o5KNQ9R-ummCVpBGTiPWtBLvDPdVm-uxMuIQXmj3mlU" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yashpouranik.bitbros.in/articles">
+    <meta property="og:title" content="Articles - Yash Pouranik">
+    <meta property="og:description" content="Technical writing on backend systems, APIs, auth, and developer experience.">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-logo">Y</a>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/urbackend/devlog">Devlog</a>
+        </div>
+        <button class="nav-command-btn" id="command-btn">
+            ⌘
+        </button>
+    </nav>
+
+    <main class="main-content">
+        <section class="project-page-header">
+            <h2 class="gradient-text-green">Writing on systems, debugging, and backend engineering.</h2>
+            <p>Articles published on Medium.</p>
+        </section>
+
+        <section>
+            <div class="article-grid">
+                <% articles.forEach(article => { %>
+                    <a href="<%= article.url %>" class="article-card" target="_blank" rel="noopener noreferrer">
+                        <div class="article-meta">
+                            <span><%= article.date %></span>
+                            <span><%= article.readTime %></span>
+                        </div>
+                        <div class="article-card-title"><%= article.title %></div>
+                        <p class="article-card-description"><%= article.description %></p>
+                        <span class="article-card-link">Read on Medium ↗</span>
+                    </a>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette" id="command-palette">
+            <input type="text" placeholder="Type a command or search..." class="command-input" id="command-input">
+            <ul class="command-list" id="command-list"></ul>
+        </div>
+    </div>
+
+    <footer class="footer-content">
+        <a href="https://linkedin.com/in/yash-pouranik30" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yash-pouranik" target="_blank">GitHub</a>
+        <a href="http://x.com/yash_pouranik" target="_blank">X (Twitter)</a>
+        <a href="https://medium.com/@yashpouranik124" target="_blank">Medium</a>
+        <a href="mailto:yashpouranik124@gmail.com">Email</a>
+        <a href="/YASH_RESUME_APRIL2026.pdf" target="_blank">Resume</a>
+    </footer>
+
+    <script src="/js/command.js"></script>
+</body>
+</html>

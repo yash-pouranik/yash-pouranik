@@ -183,16 +183,55 @@ const projects = [
     }
 ];
 
+const articles = [
+    {
+        title: "I Had Zero Idea What RLS Was, So I Built It for MongoDB",
+        url: "https://medium.com/@yashpouranik124/i-had-zero-idea-what-rls-was-so-i-built-it-for-mongodb-9f1e11eeba8a",
+        date: "25 July",
+        readTime: "7 min read",
+        description: "A practical breakdown of row-level security concepts, rebuilt from scratch for MongoDB in urBackend."
+    },
+    {
+        title: "We Needed Soft Delete in Our Open-Source BaaS",
+        url: "https://medium.com/@yashpouranik124/we-needed-soft-delete-in-our-open-source-baas-0659a5ba2e2f",
+        date: "Jun 6, 2026",
+        readTime: "5 min read",
+        description: "Why soft delete mattered in a production BaaS, and how the implementation balanced recoverability with clean data access."
+    },
+    {
+        title: "Implementing a Redis-Backed Login Lockout System in Node.js",
+        url: "https://medium.com/@yashpouranik124/implementing-a-redis-backed-login-lockout-system-in-node-js-76f6b342452d",
+        date: "May 26, 2026",
+        readTime: "3 min read",
+        description: "A short engineering write-up on protecting auth flows with Redis-backed rate limiting and temporary account lockouts."
+    },
+    {
+        title: "Stop Guessing API Bugs: How I Built Git for API Interactions",
+        url: "https://medium.com/@yashpouranik124/stop-guessing-api-bugs-how-i-built-git-for-api-interactions-14a29d3bb428",
+        date: "Mar 16, 2026",
+        readTime: "15 min read",
+        description: "The design story behind Kiroo and the idea of replayable API interactions for debugging."
+    }
+];
+
 
 
 // Root route
 app.get('/', async (req, res) => {
     try {
         const count = await trackVisit();
-        res.render("index", { featuredProjects: projects.slice(0, 2), visitNumber: ordinalSuffix(count) });
+        res.render("index", {
+            featuredProjects: projects.slice(0, 2),
+            featuredArticles: articles.slice(0, 2),
+            visitNumber: ordinalSuffix(count)
+        });
     } catch (err) {
-        console.error('Visit counter error:', err.message);
-        res.render("index", { featuredProjects: projects.slice(0, 2), visitNumber: '...' });
+        console.error('Visit counter error:', err);
+        res.render("index", {
+            featuredProjects: projects.slice(0, 2),
+            featuredArticles: articles.slice(0, 2),
+            visitNumber: '1'
+        });
     }
 });
 
@@ -204,6 +243,11 @@ app.get("/about", (req, res) => {
 // Projects route
 app.get("/projects", (req, res) => {
     res.render("projects", { projects: projects });
+});
+
+// Articles route
+app.get("/articles", (req, res) => {
+    res.render("articles", { articles });
 });
 
 // Devlog route

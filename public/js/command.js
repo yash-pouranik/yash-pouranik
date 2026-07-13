@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Home", hotkey: "G H", action: () => window.location.href = "/" },
         { name: "About", hotkey: "G A", action: () => window.location.href = "/about" },
         { name: "Projects", hotkey: "G P", action: () => window.location.href = "/projects" },
+        { name: "Articles", hotkey: "G R", action: () => window.location.href = "/articles" },
         { name: "Devlog", hotkey: "G D", action: () => window.location.href = "/urbackend/devlog" },
         
         // Socials & Links

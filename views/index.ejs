@@ -55,7 +55,7 @@
             </div>
         </header>
 
-        <section class="home-section">
+    <section class="home-section">
         <h3 class="section-title">Selected Work</h3>
         <div class="project-grid">
             <% featuredProjects.forEach(project => { %>
@@ -68,6 +68,26 @@
         </div>
         <div style="margin-top: 20px; text-align: left;">
             <a href="/projects" class="view-all-link">View all projects →</a>
+        </div>
+    </section>
+
+    <section class="home-section">
+        <h3 class="section-title">Writing</h3>
+        <div class="article-grid">
+            <% featuredArticles.forEach(article => { %>
+                <a href="<%= article.url %>" class="article-card" target="_blank" rel="noopener noreferrer">
+                    <div class="article-meta">
+                        <span><%= article.date %></span>
+                        <span><%= article.readTime %></span>
+                    </div>
+                    <div class="article-card-title"><%= article.title %></div>
+                    <p class="article-card-description"><%= article.description %></p>
+                    <span class="article-card-link">Read on Medium ↗</span>
+                </a>
+            <% }) %>
+        </div>
+        <div style="margin-top: 20px; text-align: left;">
+            <a href="/articles" class="view-all-link">Read more →</a>
         </div>
     </section>
 
