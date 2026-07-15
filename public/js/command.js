@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Devlog", hotkey: "G D", action: () => window.location.href = "/urbackend/devlog" },
         
         // Socials & Links
-        { name: "View Resume", hotkey: "V R", action: () => window.open("/YASH_RESUME_APRIL2026.pdf", "_blank") },
+        { name: "View Resume", hotkey: "V R", action: () => window.open("/YASH_POURANIK_JUL2026.pdf", "_blank") },
         { name: "LinkedIn Profile", hotkey: "G L", action: () => window.open("https://linkedin.com/in/yash-pouranik30", "_blank") },
         { name: "GitHub Profile", hotkey: "G G", action: () => window.open("https://github.com/yash-pouranik", "_blank") },
         { name: "X (Twitter)", hotkey: "G X", action: () => window.open("http://x.com/yash_pouranik", "_blank") },
