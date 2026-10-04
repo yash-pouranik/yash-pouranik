@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             group: "Actions",
             commands: [
-                { name: "View Resume",        hint: "Open PDF in new tab",   hotkey: "V R", action: () => window.open("https://docs.google.com/document/d/1rK6SaLtP3orhxonM8mJkxzjCMNdicj2lJK_Yn3N8v-g/edit?usp=sharing", "_blank") },
+                { name: "View Resume",        hint: "Open Google Doc in new tab",   hotkey: "V R", action: () => window.open("https://docs.google.com/document/d/1rK6SaLtP3orhxonM8mJkxzjCMNdicj2lJK_Yn3N8v-g/edit?usp=sharing", "_blank") },
                 { name: "Copy Page URL",      hint: "Copy link to clipboard",hotkey: "C",   action: () => { navigator.clipboard.writeText(window.location.href); showToast("Link copied"); } },
                 { name: "Portfolio Source",   hint: "View code on GitHub",   hotkey: "S",   action: () => window.open("https://github.com/yash-pouranik/portfolio", "_blank") },
             ]

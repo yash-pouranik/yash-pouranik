@@ -311,7 +311,7 @@ app.get("/videos", (req, res) => {
     res.render("videos", {
         title: "Videos & Demos — Yash Pouranik",
         description: "Watch video demos, walk-throughs, and technical breakdowns of urBackend, Errlocal, and Kiroo.",
-        canonical: "https://yashpouranik.bitbros.in/videos",
+        canonical: "https://yashpouranik.urbackend.in/videos",
         activePage: "videos",
         videos: videos
     });
@@ -324,7 +324,7 @@ app.get('/', async (req, res) => {
         res.render("index", {
             title: "Yash Pouranik — Backend Engineer",
             description: "Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling. Creator of urBackend and Errlocal.",
-            canonical: "https://yashpouranik.bitbros.in/",
+            canonical: "https://yashpouranik.urbackend.in/",
             activePage: "home",
             featuredProjects: projects.slice(0, 4), // Top 4 backend-heavy projects
             featuredArticles: articles,
@@ -335,7 +335,7 @@ app.get('/', async (req, res) => {
         res.render("index", {
             title: "Yash Pouranik — Backend Engineer",
             description: "Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling.",
-            canonical: "https://yashpouranik.bitbros.in/",
+            canonical: "https://yashpouranik.urbackend.in/",
             activePage: "home",
             featuredProjects: projects.slice(0, 4),
             featuredArticles: articles,
@@ -349,7 +349,7 @@ app.get("/about", (req, res) => {
     res.render("about", {
         title: "About — Yash Pouranik | Backend Engineer",
         description: "Learn about Yash Pouranik — computer science student, open-source maintainer, and backend engineer building distributed systems and developer tooling.",
-        canonical: "https://yashpouranik.bitbros.in/about",
+        canonical: "https://yashpouranik.urbackend.in/about",
         activePage: "about"
     });
 });
@@ -359,7 +359,7 @@ app.get("/projects", (req, res) => {
     res.render("projects", {
         title: "Projects — Yash Pouranik | Backend Engineer",
         description: "Explore backend infrastructure, developer CLI tools, SDKs, and high-traffic web applications built by Yash Pouranik.",
-        canonical: "https://yashpouranik.bitbros.in/projects",
+        canonical: "https://yashpouranik.urbackend.in/projects",
         activePage: "projects",
         projects: projects
     });
@@ -370,7 +370,7 @@ app.get("/articles", (req, res) => {
     res.render("articles", {
         title: "Articles & Engineering Logs — Yash Pouranik",
         description: "Technical write-ups by Yash Pouranik on Row-Level Security, Redis caching, soft-deletes, and API replay systems.",
-        canonical: "https://yashpouranik.bitbros.in/articles",
+        canonical: "https://yashpouranik.urbackend.in/articles",
         activePage: "articles",
         articles: articles
     });
@@ -381,7 +381,7 @@ app.get("/urbackend/devlog", (req, res) => {
     res.render("devlog", {
         title: "urBackend Engineering Log — Yash Pouranik",
         description: "Detailed devlog entries covering query optimization, Redis auth caching, database connection pooling, and latency reductions.",
-        canonical: "https://yashpouranik.bitbros.in/urbackend/devlog",
+        canonical: "https://yashpouranik.urbackend.in/urbackend/devlog",
         activePage: "devlog",
         entries: devlogData
     });
@@ -394,7 +394,7 @@ app.get("/projects/:slug", (req, res) => {
         res.render("project-detail", {
             title: `${project.title} — Yash Pouranik`,
             description: `${project.title}: ${project.tagline}. ${project.desc.substring(0, 140)}...`,
-            canonical: `https://yashpouranik.bitbros.in/projects/${project.slug}`,
+            canonical: `https://yashpouranik.urbackend.in/projects/${project.slug}`,
             activePage: "projects",
             project: project
         });
@@ -408,7 +408,7 @@ app.use((req, res) => {
     res.status(404).render("index", {
         title: "404 - Page Not Found — Yash Pouranik",
         description: "The page you are looking for does not exist.",
-        canonical: "https://yashpouranik.bitbros.in/",
+        canonical: "https://yashpouranik.urbackend.in/",
         activePage: "",
         featuredProjects: projects.slice(0, 4),
         featuredArticles: articles,
