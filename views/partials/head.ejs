@@ -21,11 +21,15 @@
 <!-- Open Graph Meta Tags -->
 <meta property="og:type" content="<%= typeof ogType !== 'undefined' ? ogType : 'website' %>">
 <meta property="og:url" content="<%= typeof canonical !== 'undefined' ? canonical : 'https://yashpouranik.urbackend.in/' %>">
-<meta property="og:title" content="<%= title %>">
-<meta property="og:description" content="<%= typeof description !== 'undefined' ? description : 'Yash Pouranik — Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling.' %>">
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="<%= title %>">
-<meta property="twitter:description" content="<%= typeof description !== 'undefined' ? description : 'Yash Pouranik — Backend Engineer.' %>">
+<meta property="og:title" content="<%= typeof ogTitle !== 'undefined' ? ogTitle : title %>">
+<meta property="og:description" content="<%= typeof description !== 'undefined' ? description : 'Building reliable backend infrastructure for real-world products.' %>">
+<meta property="og:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : 'https://cdn.jsdelivr.net/gh/yash-pouranik/yash-pouranik@main/public/YASH-BANNER.png' %>">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= typeof ogTitle !== 'undefined' ? ogTitle : title %>">
+<meta name="twitter:description" content="<%= typeof description !== 'undefined' ? description : 'Building reliable backend infrastructure for real-world products.' %>">
+<meta name="twitter:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : 'https://cdn.jsdelivr.net/gh/yash-pouranik/yash-pouranik@main/public/YASH-BANNER.png' %>">
 
 <!-- Google Structured Data / JSON-LD -->
 <% if (typeof activePage !== 'undefined' && activePage === 'home') { %>

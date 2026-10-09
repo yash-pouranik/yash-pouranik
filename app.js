@@ -322,8 +322,8 @@ app.get('/', async (req, res) => {
     try {
         const count = await trackVisit();
         res.render("index", {
-            title: "Yash Pouranik — Backend Engineer",
-            description: "Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling. Creator of urBackend and Errlocal.",
+            title: "Yash Pouranik | Backend Engineer",
+            description: "Building reliable backend infrastructure for real-world products.",
             canonical: "https://yashpouranik.urbackend.in/",
             activePage: "home",
             featuredProjects: projects.slice(0, 4), // Top 4 backend-heavy projects
@@ -333,8 +333,8 @@ app.get('/', async (req, res) => {
     } catch (err) {
         console.error('Visit counter error:', err);
         res.render("index", {
-            title: "Yash Pouranik — Backend Engineer",
-            description: "Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling.",
+            title: "Yash Pouranik | Backend Engineer",
+            description: "Building reliable backend infrastructure for real-world products.",
             canonical: "https://yashpouranik.urbackend.in/",
             activePage: "home",
             featuredProjects: projects.slice(0, 4),
