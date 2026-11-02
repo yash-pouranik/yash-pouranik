@@ -1,4 +1,4 @@
-![Profile Views](https://komarev.com/ghpvc/?username=yash-pouranik&label=Profile%20Views&color=0e75b6&style=flat)
+![Profile Views](https://komarev.com/ghpvc/?username=yash-pouranjk&label=Profile%20Views&color=0e75b6&style=flat)
 
 # Hi, I'm Yash Pouranik
 
