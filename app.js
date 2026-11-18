@@ -19,7 +19,8 @@ async function trackVisit() {
     try {
         const data = await client.db.getAll(COLLECTION, { sort: 'createdAt:desc', limit: 10 });
 
-        const doc = data.items[0];
+        //console.log(data)
+        const doc = data[0];
         if (!doc) return 1;
 
         const newCount = (doc.count || 0) + 1;
