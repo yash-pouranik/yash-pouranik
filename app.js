@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // --- urBackend Visit Counter ---
-const URBACKEND_BASE = 'https://api.ub.bitbros.in';
+const URBACKEND_BASE = 'https://api.urbackend.in';
 const URBACKEND_API_KEY = process.env.URBACKEND_API_KEY;
 const COLLECTION = 'visits';
 
