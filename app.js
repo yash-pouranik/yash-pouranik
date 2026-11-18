@@ -9,11 +9,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // --- urBackend Visit Counter ---
-const URBACKEND_BASE = 'https://api.urbackend.in';
+const URBACKEND_BASE = process.env.URBACKEND_BASE_URL;
 const URBACKEND_API_KEY = process.env.URBACKEND_API_KEY;
 const COLLECTION = 'visits';
 
-const client = urBackend({ apiKey: URBACKEND_API_KEY });
+const client = urBackend({ apiKey: URBACKEND_API_KEY, baseUrl: URBACKEND_BASE });
 
 async function trackVisit() {
     try {
