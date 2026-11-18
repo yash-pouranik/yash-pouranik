@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@urbackend/sdk": "^0.2.6",
+    "@urbackend/sdk": "^0.4.8",
     "@vercel/analytics": "^2.0.1",
     "dotenv": "^17.3.1",
     "ejs": "^3.1.10",
